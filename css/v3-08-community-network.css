@@ -1,0 +1,128 @@
+/* 08 Community Network — a photographic mosaic across industries. */
+
+body.cn { --max: 1220px; background: #F7F3EA; }
+
+.cn-hero { position: relative; overflow: hidden; padding: 36px 0 20px; }
+.cn h1 {
+  font-size: clamp(42px, 5.6vw, 74px);
+  line-height: 0.94;
+  letter-spacing: -0.045em;
+  margin: 8px 0 12px;
+}
+.cn h1 em { color: #9A7028; font-style: italic; }
+.cn .lead { font-size: 19px; max-width: 34ch; }
+.cn .eyebrow { color: #245347; }
+
+.cn-mosaic {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 22px;
+}
+.cn-tile {
+  position: relative;
+  margin: 0;
+  min-height: 150px;
+  overflow: hidden;
+  background: #E7E1D4;
+}
+.cn-tile img { width: 100%; height: 100%; object-fit: cover; object-position: center 28%; min-height: 150px; }
+.cn-tile figcaption {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  margin: 0;
+  padding: 28px 10px 8px;
+  background: linear-gradient(transparent, rgba(16, 36, 32, 0.78));
+  color: #F8F5EC;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+  max-width: none;
+}
+.cn-hex {
+  aspect-ratio: 1 / 1.1547;
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  display: grid;
+  place-items: center;
+  text-align: center;
+  min-height: 0;
+}
+.cn-hex img { min-height: 0; aspect-ratio: 1 / 1.1547; }
+.cn-hex figcaption { background: linear-gradient(transparent, rgba(16, 36, 32, 0.8)); }
+.cn-mark {
+  background: #C99A3D;
+  color: #163A32;
+  font-weight: 750;
+  letter-spacing: -0.03em;
+}
+.cn-icon {
+  background: #163A32;
+  color: #F6E8BE;
+}
+.cn-icon .ph { font-size: 26px; }
+.cn-wide { grid-column: 1 / -1; min-height: 190px; }
+.cn-wide img { aspect-ratio: 16 / 8; min-height: 190px; }
+
+.cn-section { position: relative; overflow: hidden; padding: 70px 0; }
+.cn-section h2 { font-size: clamp(30px, 4vw, 46px); letter-spacing: -0.035em; line-height: 1.05; max-width: 18ch; }
+.cn-row { display: grid; gap: 16px; align-items: center; margin-top: 28px; }
+.cn-row img { width: 100%; object-fit: cover; }
+.cn-row--a img { aspect-ratio: 16 / 9; }
+.cn-row--b img { aspect-ratio: 4 / 5; max-height: 460px; }
+.cn-forest { background: #163A32; color: #F8F5EC; }
+.cn-forest p, .cn-forest h2 { color: #F8F5EC; }
+.cn-forest .eyebrow { color: #E1B653; }
+.cn-honey { background: linear-gradient(160deg, #FFF8E7 0%, #F6E8BE 100%); }
+.cn-honey .eyebrow { color: #245347; }
+
+.cn-flow { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 0; padding: 0; list-style: none; }
+.cn-flow li {
+  list-style: none; display: inline-flex; gap: 8px; align-items: center;
+  min-height: 44px; padding: 0 10px; background: rgba(22, 58, 50, 0.06);
+}
+.cn-forest .cn-flow li { background: rgba(246, 232, 190, 0.1); }
+.cn-flow .ph { color: #245347; }
+.cn-forest .cn-flow .ph { color: #E1B653; }
+
+.cn-price { display: grid; gap: 16px; }
+.cn-price article { border-top: 2px solid #C99A3D; padding-top: 12px; }
+.cn-price strong { display: block; margin-top: 6px; }
+
+.cn-cta { position: relative; overflow: hidden; background: #14352E; color: #F8F5EC; padding: 78px 0; }
+.cn-foot { background: #102923; color: #F6E8BE; }
+.cn-foot span { opacity: 0.8; }
+
+@media (min-width: 900px) {
+  .cn-hero .wrap { display: grid; grid-template-columns: 0.78fr 1.22fr; gap: 36px; align-items: center; }
+  .cn-mosaic {
+    margin-top: 0;
+    grid-template-columns: 1.1fr 0.8fr 0.95fr;
+    grid-template-rows: 210px 190px 170px;
+  }
+  .cn-wide { grid-area: well; min-height: 0; }
+      .cn-b { grid-area: skin; }
+      .cn-c { grid-area: hive; }
+      .cn-d { grid-area: wear; }
+      .cn-e { grid-area: food; }
+      .cn-f { grid-area: shop; }
+      .cn-g { grid-area: mark; }
+      .cn-b, .cn-c, .cn-e, .cn-g { width: min(100%, 168px); justify-self: center; align-self: center; }
+      .cn-mosaic {
+        grid-template-areas:
+          "well skin hive"
+          "well wear food"
+          "shop shop mark";
+      }
+  .cn-wide img { height: 100%; aspect-ratio: auto; min-height: 0; }
+  .cn-tile img { min-height: 0; height: 100%; }
+  .cn-span2 { grid-column: 2 / span 2; }
+  .cn-row { grid-template-columns: 1.15fr 0.85fr; gap: 40px; }
+  .cn-row--flip { grid-template-columns: 0.8fr 1.2fr; }
+  .cn-row--flip .cn-copy { order: 2; }
+  .cn-price { grid-template-columns: 1fr 1fr; gap: 32px; }
+}
+
+@media (max-width: 699px) {
+  .cn-hide-sm { display: none; }
+}

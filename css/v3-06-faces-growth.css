@@ -1,0 +1,102 @@
+/* 06 Faces of Growth — four phases as a journey, not four white cards. */
+
+body.fg { --max: 1240px; background: #F7F4EC; }
+
+.fg-intro { position: relative; overflow: hidden; padding: 42px 0 10px; }
+.fg-intro h1 {
+  font-size: clamp(42px, 5.4vw, 72px);
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+  margin: 8px 0 12px;
+}
+.fg-intro h1 em { color: #9A7028; font-style: italic; }
+.fg-intro .lead { font-size: 19px; max-width: 46ch; }
+
+.fg-journey {
+  display: grid;
+  gap: 0;
+  margin-top: 22px;
+}
+.fg-phase {
+  position: relative;
+  overflow: hidden;
+  min-height: 420px;
+  padding: 28px 22px 32px;
+  display: grid;
+  align-content: end;
+  gap: 8px;
+}
+.fg-phase h2 { font-size: clamp(28px, 3vw, 36px); letter-spacing: -0.03em; margin: 0; }
+.fg-phase p { margin: 0; max-width: 28ch; }
+.fg-num {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: clamp(72px, 10vw, 120px);
+  line-height: 0.8;
+  font-weight: 750;
+  letter-spacing: -0.06em;
+  opacity: 0.28;
+  pointer-events: none;
+}
+.fg-portrait {
+  width: min(168px, 46vw);
+  aspect-ratio: 1 / 1.1547;
+  margin-bottom: 12px;
+}
+.fg-portrait img { object-position: center 18%; }
+.fg-phase--1 { background: #F8F5EC; color: #163A32; }
+.fg-phase--1 .fg-num { color: #245347; }
+.fg-phase--2 { background: #F3E2B4; color: #163A32; }
+.fg-phase--2 .fg-num { color: #9A7028; }
+.fg-phase--3 { background: #397261; color: #F8F5EC; }
+.fg-phase--3 .fg-num { color: #DDE8E0; }
+.fg-phase--4 { background: #14352E; color: #F6E8BE; }
+.fg-phase--4 .fg-num { color: #E1B653; }
+.fg-note { font-size: 14px; color: #245347; margin: 14px 0 0; }
+
+.fg-split { position: relative; overflow: hidden; padding: 76px 0; }
+.fg-split--biz { background: #163A32; color: #F8F5EC; }
+.fg-split--par { background: linear-gradient(165deg, #FFF8E7, #F6E8BE); color: #163A32; }
+.fg-grid { display: grid; gap: 28px; align-items: center; }
+.fg-grid img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 20%; }
+.fg-split h2 { font-size: clamp(32px, 4vw, 48px); letter-spacing: -0.035em; line-height: 1.05; }
+.fg-split--biz .eyebrow { color: #E1B653; }
+.fg-split--par .eyebrow { color: #245347; }
+
+.fg-id { position: relative; overflow: hidden; padding: 72px 0; background: #FBF8F1; }
+.fg-id h2 { font-size: clamp(32px, 4vw, 52px); letter-spacing: -0.04em; max-width: 16ch; }
+.fg-nodes { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
+.fg-nodes span {
+  display: inline-flex; align-items: center; gap: 8px;
+  min-height: 46px; padding: 0 12px; background: #fff;
+  border: 1px solid rgba(22, 58, 50, 0.12);
+}
+.fg-nodes .ph { color: #245347; }
+
+.fg-flow { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; margin-left: 0; padding: 0; list-style: none; }
+.fg-flow li {
+  list-style: none; display: inline-flex; gap: 8px; align-items: center;
+  min-height: 44px; padding: 0 10px; background: rgba(22, 58, 50, 0.05);
+}
+.fg-muskle { padding: 64px 0; }
+.fg-muskle h2 { font-size: 40px; letter-spacing: -0.04em; }
+.fg-price { display: grid; gap: 16px; padding-bottom: 64px; }
+.fg-price article { border-top: 2px solid #C99A3D; padding-top: 12px; }
+.fg-price strong { display: block; margin-top: 6px; }
+
+.fg-cta { position: relative; overflow: hidden; background: #163A32; color: #F8F5EC; padding: 78px 0; }
+.fg-foot { background: #102923; color: #F6E8BE; }
+.fg-foot span { opacity: 0.8; }
+
+@media (min-width: 900px) {
+  .fg-journey { grid-template-columns: 0.82fr 0.96fr 1.08fr 1.22fr; min-height: 640px; }
+  .fg-phase { min-height: 640px; padding: 24px 18px 28px; }
+  .fg-grid { grid-template-columns: 0.9fr 1.1fr; gap: 48px; }
+  .fg-grid--flip { grid-template-columns: 1.1fr 0.9fr; }
+  .fg-price { grid-template-columns: 1fr 1fr; gap: 32px; }
+}
+
+@media (max-width: 759px) {
+  .fg-phase--deskphoto { display: none; }
+}
