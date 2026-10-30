@@ -7,6 +7,7 @@ h1 { font-size: clamp(36px, 5vw, 56px); letter-spacing: -0.04em; line-height: 1;
 .lab-note { max-width: 68ch; color: #3A4A42; }
 .lab-grid { display: grid; gap: 16px; margin-top: 28px; }
 article {
+  min-width: 0;
   background: #fff;
   border: 1px solid rgba(22, 58, 50, 0.1);
   padding: 12px 12px 16px;
@@ -14,6 +15,7 @@ article {
   gap: 8px;
   align-content: start;
 }
+article[hidden], .lab-group[hidden] { display: none !important; }
 article img {
   width: 100%;
   aspect-ratio: 16 / 10;
@@ -24,6 +26,20 @@ article img {
 .lab-id { margin: 4px 0 0; letter-spacing: 0.14em; font-size: 12px; color: #245347; font-weight: 700; }
 h2 { margin: 0; font-size: clamp(22px, 2vw, 28px); letter-spacing: -0.03em; line-height: 1.1; }
 article p { margin: 0; font-size: 15px; line-height: 1.45; }
+.lab-filters { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.lab-filters button {
+  min-height: 44px; padding: 0 14px; border: 1.5px solid #163A32; background: transparent;
+  color: #163A32; font: inherit; font-weight: 700; cursor: pointer;
+}
+.lab-filters button[aria-pressed="true"] { background: #163A32; color: #F8F5EC; }
+.lab-group-title {
+  margin: 28px 0 0; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #245347;
+}
+.lab-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.lab-tags span {
+  font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700;
+  color: #245347; border: 1px solid rgba(36, 83, 71, 0.35); padding: 3px 6px;
+}
 .lab-open {
   display: inline-flex;
   margin-top: 6px;
