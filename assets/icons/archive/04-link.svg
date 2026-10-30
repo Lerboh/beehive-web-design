@@ -1,0 +1,15 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 48 48"
+  width="48"
+  height="48"
+  fill="none"
+  stroke="#9A7028"
+  stroke-width="1.7"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  aria-hidden="true"
+>
+  <rect x="7" y="17" width="20" height="14" rx="7" />
+  <rect x="21" y="17" width="20" height="14" rx="7" />
+</svg>

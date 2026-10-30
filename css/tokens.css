@@ -1,0 +1,64 @@
+/*
+  BeeHive design tokens — trial values for the style proposal.
+  Change a color here to update the preview. Not a final brand system.
+*/
+
+:root {
+  --bh-bg: #FBFAF7;
+  --bh-surface: #FFFFFF;
+  --bh-surface-soft: #F7F3E9;
+
+  --bh-text: #29261F;
+  --bh-text-soft: #6F695E;
+
+  --bh-gold: #C99A3D;
+  --bh-gold-dark: #9A7028;
+  --bh-honey: #E1B653;
+  --bh-honey-light: #F6E8BE;
+
+  --bh-line: #E7E0D2;
+
+  --bh-success: #55745B;
+
+  --bh-radius-sm: 10px;
+  --bh-radius-md: 16px;
+  --bh-radius-lg: 24px;
+
+  --bh-shadow-color: rgba(61, 50, 29, 0.08);
+  --bh-shadow-soft: 0 12px 35px var(--bh-shadow-color);
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+
+  --bh-font: Inter, "Segoe UI", Arial, Helvetica, sans-serif;
+  --bh-font-mono: Consolas, "Courier New", monospace;
+
+  --bh-max: 1200px;
+  --bh-gutter: 18px;
+
+  --bh-h1: clamp(38px, 2.1vw + 26px, 56px);
+  --bh-h2: clamp(30px, 1.15vw + 22px, 38px);
+  --bh-h3: clamp(21px, 0.45vw + 18px, 24px);
+  --bh-lead: 18px;
+  --bh-body: 16px;
+  --bh-small: 14px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --bh-gutter: 24px;
+  }
+}
+
+@media (min-width: 1100px) {
+  :root {
+    --bh-gutter: 32px;
+  }
+}
