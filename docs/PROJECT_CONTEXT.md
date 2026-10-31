@@ -49,7 +49,6 @@ Voorstellen in deze stap, nog niet goedgekeurd:
 
 ## NOT DECIDED
 
-- Definitief logo.
 - Definitieve BeeHive-kleuren.
 - Definitieve fonts.
 - Mascotte: geen bestand aanwezig, niet gebruikt.
@@ -63,3 +62,12 @@ Voorstellen in deze stap, nog niet goedgekeurd:
 - BeeHive-referentieafbeelding. Die is in de opdracht genoemd en niet in deze map aangetroffen.
 - Definitieve fotografie, bedrijfsbeeld en partnerbeeld.
 - Taalkeuze en vertaling na de Engelse proef.
+
+## BEEHIVE LOGO SYSTEM
+
+- Business identity = clean hive logo without bees.
+- Partner identity = hive logo with bees.
+- Shared platform uses the clean core mark as neutral default.
+- Partner-route moments may explicitly use the bee version.
+- These raster/logo assets must never be replaced by interface icons.
+- Bestanden: `assets/brand/beehive-business-logo.png`, `assets/brand/beehive-partner-logo.png`, plus transparent derivatives. Zie `docs/BRAND_SYSTEM.md`.

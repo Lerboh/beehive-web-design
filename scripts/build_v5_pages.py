@@ -111,6 +111,15 @@ def img(name):
     return f"assets/generated/v5/{folder}/{name}.webp"
 
 
+BIZ_LOGO = "assets/brand/beehive-business-logo-transparent.png"
+PAR_LOGO = "assets/brand/beehive-partner-logo-transparent.png"
+
+
+def logo(kind, role, alt):
+    src = PAR_LOGO if kind == "par" else BIZ_LOGO
+    return f'<img class="bh-mark bh-mark--{role}" src="{src}" alt="{alt}" width="1024" height="1024">'
+
+
 def header(c, current):
     slug = c["slug"]
     def item(key, href, label):
@@ -126,7 +135,7 @@ def header(c, current):
     started = f"{slug}-business.html#apply" if current == "biz" else f"{slug}-partner.html#apply" if current == "par" else f"{slug}.html#routes"
     return f"""  <a class="skip" href="#main">Skip to content</a>
   <header class="site-header">
-    <a class="brand" href="{slug}.html">BeeHive<span>.Partners</span></a>
+    <a class="brand" href="{slug}.html">{logo(current, "header", "")}BeeHive<span>.Partners</span></a>
     <a class="lab" href="design-lab.html">Design lab</a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav" data-nav-toggle><span></span><span class="sr">Menu</span></button>
     <nav class="nav" id="nav" data-nav>
@@ -136,11 +145,11 @@ def header(c, current):
   </header>"""
 
 
-def footer(c):
+def footer(c, kind="biz"):
     slug = c["slug"]
     return f"""  <footer class="site-footer">
     <div class="wrap">
-      <div><a class="brand" href="{slug}.html">BeeHive<span>.Partners</span></a><p>The platform for structured partnerships between businesses and the people who help their brands grow.</p></div>
+      <div><a class="brand" href="{slug}.html">{logo(kind, "header", "")}BeeHive<span>.Partners</span></a><p>The platform for structured partnerships between businesses and the people who help their brands grow.</p></div>
       <div><h2 class="eyebrow">Platform</h2><p><a href="{slug}-business.html">For Businesses</a></p><p><a href="{slug}-partner.html">For Partners</a></p><p><a href="{slug}.html#how-it-works">How It Works</a></p><p><a href="{slug}.html#partner-program">Partner Program</a></p></div>
       <div><h2 class="eyebrow">Company</h2><p>About <span>Coming later</span></p><p>Contact <span>Coming later</span></p></div>
     </div>
@@ -167,7 +176,7 @@ def shell(c, kind, title, body):
   <main id="main">
 {body}
   </main>
-{footer(c)}
+{footer(c, kind)}
 {NAV_SCRIPT}
   <script src="js/v5-forms.js"></script>
 </body>
@@ -184,6 +193,7 @@ def hero(c, kind):
             "Yes, I want BeeHive for my business",
         )
         photo, alt = c["biz"], c["biz_alt"]
+        mark = logo("biz", "hero", "BeeHive Business")
     else:
         kicker, h1, lead, cta = (
             "For partners",
@@ -192,11 +202,13 @@ def hero(c, kind):
             "Yes, I want to become a partner",
         )
         photo, alt = c["par"], c["par_alt"]
+        mark = logo("par", "hero", "BeeHive Partners")
     if c["bleed"]:
         return f"""    <section class="v5-hero v5-hero--bleed v5-hero--{kind}" aria-labelledby="hero-title">
       <img src="{img(photo)}" alt="{alt}" width="1280" height="720">
       <div class="v5-veil" aria-hidden="true"></div>
       <div class="wrap">
+        {mark}
         <p class="v5-kicker">{kicker}</p>
         <h1 id="hero-title">{h1}</h1>
         <p class="lead">{lead}</p>
@@ -209,6 +221,7 @@ def hero(c, kind):
     return f"""    <section class="v5-hero v5-hero--{kind}" aria-labelledby="hero-title">
       <div class="wrap v5-hero__grid">
         <div>
+          {mark}
           <p class="v5-kicker">{kicker}</p>
           <h1 id="hero-title">{h1}</h1>
           <p class="lead">{lead}</p>
@@ -342,6 +355,7 @@ def business_body(c):
     </section>
     <section class="v5-block" id="apply" aria-labelledby="apply-title">
       <div class="wrap">
+        {logo("biz", "signup", "BeeHive Business")}
         <h2 id="apply-title">Yes, I want BeeHive for my business</h2>
         <p class="v5-proto">Design prototype — submission is not connected yet.</p>
         <form class="v5-form" data-prototype-form action="#" method="post">
@@ -462,6 +476,7 @@ def partner_body(c):
     </section>
     <section class="v5-block" id="apply" aria-labelledby="apply-title">
       <div class="wrap">
+        {logo("par", "signup", "BeeHive Partners")}
         <h2 id="apply-title">Yes, I want to become a partner</h2>
         <p class="v5-proto">Design prototype — submission is not connected yet.</p>
         <form class="v5-form" data-prototype-form action="#" method="post">
@@ -559,12 +574,14 @@ def routes(c):
         <h2 id="routes-title">Choose your side.</h2>
         <div class="v5-routes__grid">
           <article class="v5-routes__biz">
+            {logo("biz", "route", "BeeHive Business")}
             <p class="eyebrow">For businesses</p>
             <h3>Build your partner programme.</h3>
             <p>A structured place to bring partners in and develop the relationship.</p>
             <a class="btn btn-gold" href="{slug}-business.html">Explore for Businesses</a>
           </article>
           <article class="v5-routes__par">
+            {logo("par", "route", "BeeHive Partners")}
             <p class="eyebrow">For partners</p>
             <h3>Build relationships and grow.</h3>
             <p>One identity. A separate partnership with each business you join.</p>

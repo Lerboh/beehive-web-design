@@ -111,3 +111,55 @@ body.hp .v5-phases li:nth-child(4) { background: #0C1C18; }
 @media (max-width: 799px) {
   .v5-hero--bleed { min-height: 88vh; }
 }
+
+/* Brand marks. Phosphor stays the interface icon system. */
+.brand { display: flex; align-items: center; gap: 10px; }
+.bh-mark {
+  display: block;
+  width: auto;
+  max-width: none;
+  height: 40px;
+  aspect-ratio: auto;
+  object-fit: contain;
+  object-position: center;
+  flex: none;
+  background: transparent;
+}
+.bh-mark--hero { height: 148px; margin: 0 0 14px; }
+.bh-mark--signup { height: 84px; margin: 0 0 12px; }
+.bh-mark--route { height: 96px; margin: 0 0 12px; }
+.v5-hero__grid img.bh-mark,
+.v5-split img.bh-mark,
+.v5-link img.bh-mark,
+.v5-hero--bleed img.bh-mark {
+  position: static;
+  inset: auto;
+  width: auto;
+  max-width: none;
+  height: 148px;
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+.v5-hero--bleed img.bh-mark { height: 132px; }
+body.hp .bh-mark,
+.v5-routes__biz .bh-mark,
+.v5-hero--bleed .bh-mark {
+  background: #fff;
+  border-radius: 12px;
+  padding: 6px;
+  box-sizing: content-box;
+}
+body.hp .brand .bh-mark { padding: 2px; border-radius: 6px; }
+body.hp .v5-routes__par .bh-mark {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+}
+@media (max-width: 700px) {
+  .brand .bh-mark { height: 32px; }
+  .bh-mark--hero,
+  .v5-hero__grid img.bh-mark,
+  .v5-hero--bleed img.bh-mark { height: 112px; }
+  .bh-mark--signup { height: 68px; }
+  .bh-mark--route { height: 76px; }
+}
