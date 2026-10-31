@@ -59,6 +59,8 @@ p, li { max-width: 62ch; }
 .wrap {
   width: min(var(--max, 1240px), calc(100% - 40px));
   margin-inline: auto;
+  position: relative;
+  z-index: 1;
 }
 
 .site-header {
