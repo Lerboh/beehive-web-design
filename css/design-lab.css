@@ -58,3 +58,6 @@ article p { margin: 0; font-size: 15px; line-height: 1.45; }
 @media (min-width: 1180px) {
   .lab-grid { grid-template-columns: repeat(4, 1fr); }
 }
+
+.lab-links { display: flex; flex-wrap: wrap; gap: 8px; }
+.lab-links .lab-open { min-height: 44px; }
