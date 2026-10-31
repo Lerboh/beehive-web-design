@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BeeHive Business Dashboard — Nutribites demo</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="vendor/phosphor/regular/style.css">
+  <link rel="stylesheet" href="css/business-dashboard-demo.css">
+  <script>
+    try {
+      if (localStorage.getItem("beehive-dashboard-sidebar") === "collapsed") {
+        document.documentElement.classList.add("is-collapsed");
+      }
+    } catch (error) { /* preference only */ }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="app">
+    <aside class="sidebar" data-sidebar>
+      <a class="side-brand" href="design-lab.html">
+        <img src="assets/brand/beehive-business-logo-transparent.png" alt="" width="1024" height="1024">
+        <span class="brand-copy">BeeHive<span style="color:#C99A3D">.Partners</span><small>Business</small></span>
+      </a>
+      <button class="drawer-close" type="button" data-drawer-close>Close</button>
+      <nav class="side-nav" aria-label="Dashboard">
+        <button type="button" data-nav="overview" title="Overview"><i class="ph ph-squares-four" aria-hidden="true"></i><span class="nav-label">Overview</span></button>
+        <button type="button" data-nav="partners" title="Partners"><i class="ph ph-users-three" aria-hidden="true"></i><span class="nav-label">Partners</span></button>
+        <button type="button" data-nav="applications" title="Applications"><i class="ph ph-user-plus" aria-hidden="true"></i><span class="nav-label">Applications</span></button>
+        <button type="button" data-nav="customers" title="Customers"><i class="ph ph-address-book" aria-hidden="true"></i><span class="nav-label">Customers</span></button>
+        <button type="button" data-nav="sales" title="Sales"><i class="ph ph-chart-line-up" aria-hidden="true"></i><span class="nav-label">Sales</span></button>
+        <button type="button" data-nav="campaigns" title="Campaigns"><i class="ph ph-megaphone" aria-hidden="true"></i><span class="nav-label">Campaigns</span></button>
+        <button type="button" data-nav="products" title="Products"><i class="ph ph-package" aria-hidden="true"></i><span class="nav-label">Products</span></button>
+        <button type="button" data-nav="phases" title="4 Phases"><i class="ph ph-stack" aria-hidden="true"></i><span class="nav-label">4 Phases</span></button>
+        <button type="button" data-nav="rewards" title="Rewards"><i class="ph ph-coins" aria-hidden="true"></i><span class="nav-label">Rewards</span></button>
+        <button type="button" data-nav="analytics" title="Analytics"><i class="ph ph-chart-bar" aria-hidden="true"></i><span class="nav-label">Analytics</span></button>
+        <button type="button" data-nav="programme" title="Programme Settings"><i class="ph ph-gear" aria-hidden="true"></i><span class="nav-label">Programme Settings</span></button>
+        <button type="button" data-nav="beehive" title="BeeHive Settings"><i class="ph ph-sliders" aria-hidden="true"></i><span class="nav-label">BeeHive Settings</span></button>
+        <button type="button" data-nav="support" title="Support"><i class="ph ph-chat-circle-dots" aria-hidden="true"></i><span class="nav-label">Support</span></button>
+      </nav>
+      <button class="collapse-btn" type="button" data-collapse aria-expanded="true" aria-label="Collapse sidebar"><i class="ph ph-caret-left" aria-hidden="true"></i><span class="nav-label">Collapse</span></button>
+    </aside>
+
+    <div class="shell">
+      <div class="shell-head">
+        <div class="demo-bar"><p>Demo environment — all data shown is fictional. Nutribites is not a BeeHive customer.</p></div>
+        <header class="topbar">
+          <button class="menu-btn" type="button" data-menu aria-label="Open menu"><i class="ph ph-list" aria-hidden="true"></i></button>
+          <img class="top-logo" src="assets/brand/beehive-business-logo-transparent.png" alt="BeeHive Business" width="1024" height="1024">
+          <div class="company-lockup">
+            <strong>Nutribites</strong>
+            <span>DEMO BUSINESS · BeeHive Business Dashboard</span>
+          </div>
+          <span class="badge">Demo mode</span>
+          <label class="search"><span class="sr">Search demo records</span><i class="ph ph-magnifying-glass" aria-hidden="true"></i><input data-search type="search" placeholder="Search demo records"></label>
+          <div class="top-actions">
+            <button class="icon-btn" type="button" data-pop="pop-notes" aria-label="Notifications"><i class="ph ph-bell" aria-hidden="true"></i></button>
+            <button class="icon-btn" type="button" data-pop="pop-help" aria-label="Help"><i class="ph ph-question" aria-hidden="true"></i></button>
+            <button class="avatar" type="button" data-pop="pop-profile" aria-label="Demo business profile">NB</button>
+          </div>
+        </header>
+        <div id="pop-notes" class="popover" data-popover hidden><p class="kicker">Demo</p><p>3 fictional notices. Nothing here is a live Nutribites alert.</p></div>
+        <div id="pop-help" class="popover" data-popover hidden><p class="kicker">Prototype</p><p>Help is not connected. No message is sent.</p></div>
+        <div id="pop-profile" class="popover" data-popover hidden><p class="kicker">Demo business</p><p>Nutribites profile placeholder. Sign-in is not connected.</p></div>
+      </div>
+
+      <main class="main" id="main">
+        <section data-view="overview">
+          <p class="kicker">Overview</p>
+          <h1>Good morning, Nutribites</h1>
+          <p class="lead">Here’s what is happening in your partner programme.</p>
+          <div data-mount="kpis"></div>
+          <div data-mount="performance"></div>
+          <div class="split" data-mount="split"></div>
+          <div data-mount="health"></div>
+          <div data-mount="phases"></div>
+        </section>
+
+        <section data-view="partners" hidden>
+          <p class="kicker">Partners</p>
+          <h2>Partners</h2>
+          <div data-mount="partners"></div>
+        </section>
+
+        <section data-view="applications" hidden>
+          <p class="kicker">Applications</p>
+          <h2>Pending applications</h2>
+          <div data-mount="applications"></div>
+        </section>
+
+        <!-- Customer data handling requires privacy/permission review before production implementation. Do not connect real customer data. -->
+        <section data-view="customers" hidden>
+          <p class="kicker">Customers</p>
+          <h2>Customers generated through partners</h2>
+          <div data-mount="customers"></div>
+        </section>
+
+        <section data-view="sales" hidden>
+          <p class="kicker">Sales</p>
+          <h2>Partner sales</h2>
+          <div data-mount="sales"></div>
+        </section>
+
+        <section data-view="campaigns" hidden>
+          <p class="kicker">Campaigns</p>
+          <h2>Campaigns</h2>
+          <p class="demo-tag">Demo data · not live Nutribites campaigns</p>
+          <div class="cards">
+            <article class="card"><h3>October Wellness</h3><p>Active demo campaign.</p></article>
+            <article class="card"><h3>Green Juice introduction</h3><p>Active demo campaign.</p></article>
+            <article class="card"><h3>Sleep goal</h3><p>Scheduled demo campaign.</p></article>
+          </div>
+        </section>
+
+        <section data-view="products" hidden>
+          <p class="kicker">Products</p>
+          <h2>Products a partner might promote</h2>
+          <p>Names follow the public Nutribites range. Availability inside BeeHive is not a real decision.</p>
+          <div class="cards">
+            <article class="card"><h3>Green Juice</h3><p>Energy and wellness.</p></article>
+            <article class="card"><h3>Magnesium Bisglycinaat</h3><p>Minerals.</p></article>
+            <article class="card"><h3>(Pro)Biotica</h3><p>Gut and digestion.</p></article>
+            <article class="card"><h3>Visolie</h3><p>Omega.</p></article>
+            <article class="card"><h3>Collageen</h3><p>Collagen category.</p></article>
+          </div>
+        </section>
+
+        <section data-view="phases" hidden>
+          <p class="kicker">4 phases</p>
+          <h2>Fixed BeeHive phases</h2>
+          <p>The sequence does not change. The business configures criteria and benefits.</p>
+          <ol>
+            <li>Starter — join and learn.</li>
+            <li>Active Ambassador — promote and take part.</li>
+            <li>Partner — a broader relationship.</li>
+            <li>Professional / Cash Partner — a formal commercial partnership.</li>
+          </ol>
+        </section>
+
+        <section data-view="rewards" hidden>
+          <p class="kicker">Rewards</p>
+          <h2>Rewards and commission</h2>
+          <p class="demo-tag">Demo data · €1,860</p>
+          <p>Commission and other benefits would be defined by the business. No rate on this screen is a Nutribites rule.</p>
+        </section>
+
+        <section data-view="analytics" hidden>
+          <p class="kicker">Analytics</p>
+          <h2>Programme snapshot</h2>
+          <p>Demo only: 24 partners, 186 attributed customers, €12,480 partner sales, 3 campaigns. Not a live analytics product.</p>
+        </section>
+
+        <section data-view="programme" hidden>
+          <p class="kicker">Programme settings</p>
+          <h2>What the business would configure</h2>
+          <p>The four phase names are fixed. Criteria and rewards are not.</p>
+          <form class="settings" data-demo-form action="#" method="post">
+            <label>Phase framework<input value="Starter, Active Ambassador, Partner, Professional / Cash Partner" readonly></label>
+            <label>Progression criteria<textarea>To be defined by the business.</textarea></label>
+            <label>Commission and rewards<textarea>To be defined. Final pricing is not set.</textarea></label>
+            <p class="callout" data-demo-note tabindex="-1" hidden>Demo only — nothing was saved.</p>
+            <button class="primary" type="submit">Save programme</button>
+          </form>
+        </section>
+
+        <section data-view="beehive" hidden>
+          <p class="kicker">BeeHive settings</p>
+          <h2>Platform</h2>
+          <p>Demo mode stays on. Billing, users and data export are not connected.</p>
+        </section>
+
+        <section data-view="support" hidden>
+          <p class="kicker">Support</p>
+          <h2>Support</h2>
+          <p>This prototype does not send a message to BeeHive or to Nutribites.</p>
+        </section>
+      </main>
+    </div>
+  </div>
+  <div class="backdrop" data-backdrop hidden></div>
+  <aside class="panel" data-panel hidden aria-labelledby="panel-title">
+    <header>
+      <p id="panel-title" class="kicker">Detail</p>
+      <button class="icon-btn" type="button" data-close-panel aria-label="Close panel"><i class="ph ph-x" aria-hidden="true"></i></button>
+    </header>
+    <div data-panel-body></div>
+  </aside>
+  <script src="js/business-dashboard-demo.js"></script>
+</body>
+</html>
