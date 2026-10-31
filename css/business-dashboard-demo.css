@@ -38,6 +38,7 @@ p, li { max-width: none; }
   padding: 7px 16px; font-size: 13px; font-weight: 700;
 }
 .demo-bar p { margin: 0; }
+.demo-bar a { color: #F6E8BE; margin-left: 8px; }
 
 .app { min-height: 100vh; }
 .sidebar {

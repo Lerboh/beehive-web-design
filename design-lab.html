@@ -145,6 +145,25 @@
       </article>
       </div>
     </section>
+    <section class="lab-group" data-app aria-labelledby="g-apps">
+      <h2 id="g-apps" class="lab-group-title">Application prototypes</h2>
+      <div class="lab-grid">
+      <article data-app>
+        <img class="lab-logo" src="assets/brand/beehive-business-logo-transparent.png" alt="" width="1024" height="1024">
+        <p class="lab-id">Business</p>
+        <h2>Business Dashboard</h2>
+        <p>Company view of a partner programme. Demo data for a fictional Nutribites workspace.</p>
+        <p class="lab-links"><a class="lab-open" href="business-dashboard-demo.html">Open Business Dashboard</a></p>
+      </article>
+      <article data-app>
+        <img class="lab-logo" src="assets/brand/beehive-partner-logo-transparent.png" alt="" width="1024" height="1024">
+        <p class="lab-id">Partner</p>
+        <h2>Partner Dashboard</h2>
+        <p>One BeeHive identity with separate company partnerships, phases, campaigns, sales and rewards.</p>
+        <p class="lab-links"><a class="lab-open" href="partner-dashboard-demo.html">Open Partner Dashboard</a></p>
+      </article>
+      </div>
+    </section>
   </main>
   <script>
     (function () {
@@ -154,12 +173,12 @@
           var filter = button.getAttribute("data-filter");
           buttons.forEach(function (item) { item.setAttribute("aria-pressed", item === button ? "true" : "false"); });
           document.querySelectorAll(".lab-grid article").forEach(function (card) {
-            if (card.hasAttribute("data-example")) return;
+            if (card.hasAttribute("data-example") || card.hasAttribute("data-app")) return;
             var tags = (card.getAttribute("data-tags") || "").split(" ");
             card.hidden = filter !== "all" && tags.indexOf(filter) === -1;
           });
           document.querySelectorAll(".lab-group").forEach(function (group) {
-            if (group.hasAttribute("data-example")) { group.hidden = false; return; }
+            if (group.hasAttribute("data-example") || group.hasAttribute("data-app")) { group.hidden = false; return; }
             group.hidden = !group.querySelector("article:not([hidden])");
           });
         });

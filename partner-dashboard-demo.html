@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BeeHive Partner Dashboard — demo</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="vendor/phosphor/regular/style.css">
+  <link rel="stylesheet" href="css/partner-dashboard-demo.css">
+  <script>
+    try {
+      if (localStorage.getItem("beehive-partner-dashboard-sidebar") === "collapsed") {
+        document.documentElement.classList.add("is-collapsed");
+      }
+    } catch (error) { /* preference only */ }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="app">
+    <aside class="sidebar" data-sidebar>
+      <a class="side-brand" href="design-lab.html">
+        <img src="assets/brand/beehive-partner-logo-transparent.png" alt="" width="1024" height="1024">
+        <span class="brand-copy">BeeHive<span style="color:#E1B653">.Partners</span><small>Partner</small></span>
+      </a>
+      <button class="drawer-close" type="button" data-drawer-close>Close</button>
+      <nav class="side-nav" aria-label="Partner">
+        <button type="button" data-nav="overview" title="Overview"><i class="ph ph-squares-four" aria-hidden="true"></i><span class="nav-label">Overview</span></button>
+        <button type="button" data-nav="partnerships" title="My Partnerships"><i class="ph ph-handshake" aria-hidden="true"></i><span class="nav-label">My Partnerships</span></button>
+        <button type="button" data-nav="discover" title="Discover Businesses"><i class="ph ph-compass" aria-hidden="true"></i><span class="nav-label">Discover Businesses</span></button>
+        <button type="button" data-nav="campaigns" title="Campaigns"><i class="ph ph-megaphone" aria-hidden="true"></i><span class="nav-label">Campaigns</span></button>
+        <button type="button" data-nav="products" title="Products &amp; Opportunities"><i class="ph ph-package" aria-hidden="true"></i><span class="nav-label">Products &amp; Opportunities</span></button>
+        <button type="button" data-nav="sales" title="Sales"><i class="ph ph-chart-line-up" aria-hidden="true"></i><span class="nav-label">Sales</span></button>
+        <button type="button" data-nav="rewards" title="Rewards"><i class="ph ph-coins" aria-hidden="true"></i><span class="nav-label">Rewards</span></button>
+        <button type="button" data-nav="links" title="My Links"><i class="ph ph-link" aria-hidden="true"></i><span class="nav-label">My Links</span></button>
+        <button type="button" data-nav="progress" title="My Progress"><i class="ph ph-path" aria-hidden="true"></i><span class="nav-label">My Progress</span></button>
+        <button type="button" data-nav="applications" title="Applications"><i class="ph ph-clipboard-text" aria-hidden="true"></i><span class="nav-label">Applications</span></button>
+        <button type="button" data-nav="account" title="Account"><i class="ph ph-user" aria-hidden="true"></i><span class="nav-label">Account</span></button>
+        <button type="button" data-nav="help" title="Help &amp; Support"><i class="ph ph-chat-circle-dots" aria-hidden="true"></i><span class="nav-label">Help &amp; Support</span></button>
+      </nav>
+      <button class="collapse-btn" type="button" data-collapse aria-expanded="true" aria-label="Collapse sidebar"><i class="ph ph-caret-left" aria-hidden="true"></i><span class="nav-label">Collapse</span></button>
+    </aside>
+
+    <div class="shell">
+      <div class="shell-head">
+        <div class="demo-bar"><p>Demo only. Emma Jansen is fictional. Company C is a demo company. No live store is connected. <a href="business-dashboard-demo.html">View business demo</a></p></div>
+        <header class="topbar">
+          <div class="context">
+            <button class="menu-btn" type="button" data-menu aria-label="Open menu"><i class="ph ph-list" aria-hidden="true"></i></button>
+            <img class="top-logo" src="assets/brand/beehive-partner-logo-transparent.png" alt="BeeHive Partners" width="1024" height="1024">
+            <div data-context></div>
+          </div>
+          <div class="switcher">
+            <button class="switcher-toggle" type="button" data-switcher-toggle aria-expanded="false" aria-haspopup="listbox" aria-controls="company-menu">
+              <small>Company</small>
+              <strong data-switcher-label>All Partnerships</strong>
+            </button>
+            <div id="company-menu" class="switcher-menu" role="listbox" data-switcher-menu hidden></div>
+          </div>
+          <div class="top-actions">
+            <button class="icon-btn" type="button" data-pop="pop-notes" aria-label="Notifications"><i class="ph ph-bell" aria-hidden="true"></i></button>
+            <button class="icon-btn" type="button" data-nav="help" aria-label="Help"><i class="ph ph-question" aria-hidden="true"></i></button>
+            <button class="avatar" type="button" data-nav="account" aria-label="Emma Jansen account">EJ</button>
+          </div>
+        </header>
+        <div id="pop-notes" class="popover" data-popover hidden>
+          <p class="kicker">Demo</p>
+          <p>2 fictional notices. Nothing here is a live alert from a company.</p>
+        </div>
+      </div>
+      <main class="main" id="main">
+        <section data-view="overview"><div data-mount="overview"></div></section>
+        <section data-view="partnerships" hidden><div data-mount="partnerships"></div></section>
+        <section data-view="discover" hidden><div data-mount="discover"></div></section>
+        <section data-view="campaigns" hidden><div data-mount="campaigns"></div></section>
+        <section data-view="products" hidden><div data-mount="products"></div></section>
+        <section data-view="sales" hidden><div data-mount="sales"></div></section>
+        <section data-view="rewards" hidden><div data-mount="rewards"></div></section>
+        <section data-view="links" hidden><div data-mount="links"></div></section>
+        <section data-view="progress" hidden><div data-mount="progress"></div></section>
+        <section data-view="applications" hidden><div data-mount="applications"></div></section>
+        <section data-view="account" hidden><div data-mount="account"></div></section>
+        <section data-view="help" hidden><div data-mount="help"></div></section>
+      </main>
+    </div>
+  </div>
+  <p class="copy-status" data-copy-status role="status"></p>
+  <div class="backdrop" data-backdrop hidden></div>
+  <aside class="panel" data-panel hidden aria-labelledby="panel-title">
+    <header>
+      <p id="panel-title" class="kicker">Detail</p>
+      <button class="icon-btn" type="button" data-close-panel aria-label="Close panel"><i class="ph ph-x" aria-hidden="true"></i></button>
+    </header>
+    <div data-panel-body></div>
+  </aside>
+  <script src="js/partner-dashboard-demo.js"></script>
+</body>
+</html>

@@ -23,6 +23,12 @@ article img {
   object-position: left center;
   background: #E7E1D4;
 }
+article img.lab-logo {
+  object-fit: contain;
+  object-position: center;
+  padding: 16px;
+  background: #F7F1E4;
+}
 .lab-id { margin: 4px 0 0; letter-spacing: 0.14em; font-size: 12px; color: #245347; font-weight: 700; }
 h2 { margin: 0; font-size: clamp(22px, 2vw, 28px); letter-spacing: -0.03em; line-height: 1.1; }
 article p { margin: 0; font-size: 15px; line-height: 1.45; }
