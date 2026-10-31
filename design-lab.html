@@ -133,6 +133,18 @@
       </article>
       </div>
     </section>
+    <section class="lab-group lab-group--example" data-example aria-labelledby="g-example">
+      <h2 id="g-example" class="lab-group-title">Real company programme example</h2>
+      <div class="lab-grid">
+      <article data-example>
+        <img src="assets/company-demo/hero.webp" alt="Neutral supplement still life used on the Nutribites demo." width="1280" height="720">
+        <p class="lab-id">Demo</p>
+        <h2>Nutribites — demo</h2>
+        <p>See how an existing health and supplement brand could appear inside BeeHive as a company programme. Not a design direction, and not an official integration.</p>
+        <p class="lab-links"><a class="lab-open" href="company-demo-nutribites.html">Open Nutribites demo</a></p>
+      </article>
+      </div>
+    </section>
   </main>
   <script>
     (function () {
@@ -142,10 +154,12 @@
           var filter = button.getAttribute("data-filter");
           buttons.forEach(function (item) { item.setAttribute("aria-pressed", item === button ? "true" : "false"); });
           document.querySelectorAll(".lab-grid article").forEach(function (card) {
+            if (card.hasAttribute("data-example")) return;
             var tags = (card.getAttribute("data-tags") || "").split(" ");
             card.hidden = filter !== "all" && tags.indexOf(filter) === -1;
           });
           document.querySelectorAll(".lab-group").forEach(function (group) {
+            if (group.hasAttribute("data-example")) { group.hidden = false; return; }
             group.hidden = !group.querySelector("article:not([hidden])");
           });
         });
